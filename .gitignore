@@ -37,3 +37,9 @@ lerna-debug.log*
 # Replit
 .replit
 replit.nix
+
+# .vscode folder
+.vscode
+
+# .env folder
+.env
