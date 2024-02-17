@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { RiesgoModule } from './riesgo/riesgo.module';
 import { ConfigModule } from '@nestjs/config';
+import { CausaModule } from './causa/causa.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { ConfigModule } from '@nestjs/config';
     ),
     ConfigModule.forRoot(),
     RiesgoModule,
+    CausaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

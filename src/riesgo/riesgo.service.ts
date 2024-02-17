@@ -14,18 +14,18 @@ export class RiesgoService {
   }
 
   findAll() {
-    return `This action returns all riesgo`;
+    return this.riesgoModel.find();
   }
 
   findOne(id: number) {
     return `This action returns a #${id} riesgo`;
   }
 
-  update(id: number, updateRiesgoDto: UpdateRiesgoDto) {
-    return `This action updates a #${id} riesgo`;
+  update(id: string, updateRiesgoDto: UpdateRiesgoDto) {
+    return this.riesgoModel.findByIdAndUpdate(id, updateRiesgoDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} riesgo`;
+  remove(id: string) {
+    return this.riesgoModel.findByIdAndDelete(id);
   }
 }

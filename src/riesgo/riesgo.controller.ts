@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { RiesgoService } from './riesgo.service';
 import { CreateRiesgoDto } from './dto/create-riesgo.dto';
 import { UpdateRiesgoDto } from './dto/update-riesgo.dto';
@@ -24,11 +32,11 @@ export class RiesgoController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRiesgoDto: UpdateRiesgoDto) {
-    return this.riesgoService.update(+id, updateRiesgoDto);
+    return this.riesgoService.update(id, updateRiesgoDto);
   }
 
-  @Delete(':id')
+  @Delete('/eliminar/:id')
   remove(@Param('id') id: string) {
-    return this.riesgoService.remove(+id);
+    return this.riesgoService.remove(id);
   }
 }
